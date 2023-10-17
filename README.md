@@ -1,4 +1,4 @@
-# Calculadora de IMC em Javascrip 
+# Calculadora de IMC em Javascript 
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/amac81/calculadoraIMC_JS/blob/main/LICENSE) 
 
