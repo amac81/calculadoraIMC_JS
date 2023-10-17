@@ -3,11 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora IMC</title>
+    <title>Calculadora IMC JS</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/scripts.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">    <script src="js/scripts.js" defer></script>
 </head>
 <body>
-    <h2>teste</h2>
+    <div id="containter">
+        <div id="calc-container">
+            <h2>Calculadora de IMC</h2>
+            <form id="imc-form">
+                <div class="form-inputs">
+                    <div class="form-control">
+                        <label for="height">Altura:</label>
+                        <input type="text" name="height" id="height" placeholder="Exemplo 1,76"/>
+                    </div>
+                    <div class="form-control">
+                        <label for="weight">Peso:</label>
+                        <input type="text" name="weight" id="weight" placeholder="Exemplo 80"/>
+                    </div>
+                </div>
+                <div class="action-control">
+                    <button id="calc-btn">Calcular</button>
+                    <button id="clear-btn">Limpar</button>
+                </div>
+            </form>
+        </div>
+        <div id="result-container">
+            <p id="imc-number">O seu IMC: <span></span></p>
+            <p id="imc-info">Situa&ccedil;&atilde;o atual: <span></span></p>
+            <h3>Verique as classifica&ccedil;&otilde;es:</h3>
+            <div id="imc-table">
+                <div id="table-header">
+                    <h4>IMC</h4>
+                    <h4>Classifica&ccedil;&atilde;o</h4>
+                    <h4>Obesidade</h4>
+                </div>
+            </div>
+            <button id="back-btn">Voltar</button>
+        </div>
+    </div>
 </body>
 </html>
