@@ -68,8 +68,32 @@ function createTable(data){
     });
 }
 
+function clearInputs() {
+    heightInput.value = "";
+    weightInput.value = "";
+}
+
+function inputValidator(text) {
+    return text.replace(/[^0-9,]/g, "");
+}
+
 // Inicialization
 createTable(imcData);
 
-
 // Events
+clearBtn.addEventListener("click", (e) => {
+    e.preventDefault(); //to avoid form submit
+    clearInputs();
+});
+
+//addEventListener to more than one element
+[heightInput, weightInput].forEach((elem) => {
+    elem.addEventListener("blur", (e) => { 
+        const validatorResult =  inputValidator(e.target.value);
+        e.target.value = validatorResult;
+     }); 
+});
+    
+
+
+
