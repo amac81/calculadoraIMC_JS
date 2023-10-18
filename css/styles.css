@@ -23,7 +23,7 @@ body {
     min-height: 400px;
     background-color: #1b3961 ;
     padding: 2rem;
-    box-shadow: 1.2rem 1.2rem 1.2rem #000;
+    box-shadow: 1.2rem 1.2rem 1.2rem #312f2f;
 }
 
 /* IMC Form */
@@ -81,7 +81,7 @@ button {
 }
 
 #clear-btn {
-    background-color: #444;
+    background-color: #6b6868;
 }
 
 button:hover{
