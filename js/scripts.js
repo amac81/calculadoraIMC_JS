@@ -82,6 +82,8 @@ function createTable(data){
 function clearInputs() {
     heightInput.value = "";
     weightInput.value = "";
+    imcNumber.classList = "";
+    imcInfo.classList = "";
 }
 
 function inputValidator(text) {
@@ -118,18 +120,17 @@ function formatVisualInfo(info) {
     case "Magreza":{
       imcNumber.classList.add("low");
       imcInfo.classList.add("low");
-      break;
-    }
-    case "Normal":{
-      imcNumber.classList.add("good");
-      imcInfo.classList.add("good");
-      break;
     }
     case "Pré-Obeso":{
       imcNumber.classList.add("low");
       imcInfo.classList.add("low");
       break;
     }
+    case "Normal":{
+      imcNumber.classList.add("good");
+      imcInfo.classList.add("good");
+      break;
+    }   
     case "Obesidade":{
       imcNumber.classList.add("medium");
       imcInfo.classList.add("medium");
