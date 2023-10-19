@@ -57,13 +57,17 @@ function createTable(data){
     data.forEach((item) => {
         const div = document.createElement("div");
         div.classList.add("table-data");
+        
+        let text = `${item.info}`;
+        const divId = text.replace(/[^a-zA-Z0-9-]/g, "");
+        div.setAttribute("id", divId);
 
         const classification = document.createElement("p");
         classification.innerText = item.classification;
 
         const info = document.createElement("p");
         info.innerText = item.info;
-
+        
         const obesityDegree = document.createElement("p");
         obesityDegree.innerText = item.obesityDegree;
 
@@ -94,6 +98,52 @@ function showOrHideResults(){
   resultContainer.classList.toggle("hide");
 }
 
+function clearState(){
+  const selectedLines = document.getElementsByClassName("table-data-result-line");
+  
+  while (selectedLines.length) {
+    selectedLines[0].classList.remove("table-data-result-line");
+  }
+}
+
+function formatVisualInfo(info) {
+
+  let text = `${info}`;
+  const divId = text.replace(/[^a-zA-Z0-9-]/g, "");
+
+  const lineToColor = document.querySelector(`#${divId}`);
+  lineToColor.classList.add("table-data-result-line");
+
+  switch(info){
+    case "Magreza":{
+      imcNumber.classList.add("low");
+      imcInfo.classList.add("low");
+      break;
+    }
+    case "Normal":{
+      imcNumber.classList.add("good");
+      imcInfo.classList.add("good");
+      break;
+    }
+    case "Pré-Obeso":{
+      imcNumber.classList.add("low");
+      imcInfo.classList.add("low");
+      break;
+    }
+    case "Obesidade":{
+      imcNumber.classList.add("medium");
+      imcInfo.classList.add("medium");
+      break;
+    }
+    case "Obesidade grave":{
+      imcNumber.classList.add("high");
+      imcInfo.classList.add("high");
+      break;
+    }
+    
+  }
+}
+
 
 // Inicialization
 createTable(imcData);
@@ -115,6 +165,7 @@ calcBtn.addEventListener("click", (e) => {
     imcData.forEach((item) => {
       if(imc >= item.min && imc <= item.max){
         info = item.info;
+        
       }
     });
     
@@ -123,6 +174,9 @@ calcBtn.addEventListener("click", (e) => {
     
     imcNumber.innerText = imc;
     imcInfo.innerText = info;
+
+    formatVisualInfo(info);
+
     showOrHideResults();
 });
 
@@ -135,6 +189,7 @@ clearBtn.addEventListener("click", (e) => {
 backBtn.addEventListener("click", () => {
   clearInputs();
   showOrHideResults();
+  clearState();
 });
 
 //addEventListener to more than one element

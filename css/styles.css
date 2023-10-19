@@ -161,3 +161,8 @@ button:hover{
 .high {
     color: #db1912;
 }
+
+.table-data-result-line {
+    color:#dbce12;
+    font-weight: bold;    
+}
